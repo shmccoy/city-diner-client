@@ -1,24 +1,62 @@
 import React, { Component } from 'react'
 import Content from './content'
+import TokenService from '../../services/token-service'
+import AuthApiService from '../../services/auth-api-service'
+
 
 
 export default class Admin extends Component {
 
-  submitForm (e) {
-		e.preventDefault()
-    this.props.history.push('/dashboard');
+  static defaultProps = {
+    onLoginSuccess: () => {},
+    location: {},
+    history: {
+      push: () => {},
+    }
+  }
+
+  state = { error: null }
+
+  handleLoginSuccess = () => {
+    const { location, history } = this.props
+    const destination = (location.state || {}).from || '/dashboard'
+    history.push(destination)
+  }
+
+  handleSubmitJwtAuth = ev => {
+    ev.preventDefault()
+    this.setState({ error: null })
+    const { user_name, password } = ev.target
+
+    AuthApiService.postLogin({
+      user_name: user_name.value,
+      password: password.value,
+    })
+    .then(res => {
+      user_name.value = ''
+      password.value = ''
+      TokenService.saveAuthToken(res.authToken)
+      this.props.onLoginSuccess()
+    })
+    .catch(res => {
+      this.setState({ error: res.error })
+    })    
   }
 
   render () {
+    const { error } = this.state
     return (
       <Content>
-      <form className="login">
+      <form onLoginSuccess={this.handleLoginSuccess} className="login">
         <h2>Admin Login</h2>
           
+        <div role='alert'>
+          {error && <p className='red'>{error}</p>}
+        </div>
         <div className="form-group">
-          <label htmlFor="username">User name</label>
+          <label htmlFor="user_name">User name</label>
           <input type="text" className="login__control"
-            name="username" id="username"/>
+            name="user_name" id="user_name"/>
         </div>
         <div className="form-group">
            <label htmlFor="password">Password</label>
@@ -26,7 +64,7 @@ export default class Admin extends Component {
             name="password" id="password"/>
         </div>
          
-        <div onClick={this.submitForm.bind(this)} className="login__button__group">
+        <div onClick={this.handleSubmitJwtAuth} className="login__button__group">
          <button type="submit" className="login__button">
              Submit
          </button>

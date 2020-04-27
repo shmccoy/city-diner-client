@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const ItemTable = props => (
   <table>
     <thead>
@@ -20,8 +21,10 @@ const ItemTable = props => (
             <td>{item.price}</td>
             <td>{item.category}</td>
             <td>
-              <button className="button muted-button">Edit</button>
-              <button className="button muted-button">Delete</button>
+              <button onClick={(e) => {
+                  props.editRow(item)
+                }} className="button muted-button">Edit</button>
+              <button onClick={(e) => props.deleteItem(item.id)} className="button muted-button">Delete</button>
             </td>
           </tr>
         ))

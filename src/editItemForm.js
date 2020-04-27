@@ -3,18 +3,17 @@ import React, { Component } from 'react'
 
 
 
-export default class AddItemForm extends Component {
+export default class EditItemForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {id: null, name: '', description: '', price: '', category: '' };
+    this.state = props.currentItem;
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.handlePriceChange = this.handlePriceChange.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }  
-
+  }
   handleNameChange(event) {
     this.setState({name: event.target.value});
   }
@@ -33,7 +32,7 @@ export default class AddItemForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.addItem(this.state);
+    this.props.updateItem(this.state);
     
   }
 
@@ -62,7 +61,10 @@ export default class AddItemForm extends Component {
         <option value= "entrees">Entrees</option>
         <option value="beverages">Beverages</option>
       </select><br />
-      <input type='submit' />
+      <button>Update user</button>
+      <button onClick={() => this.props.setEditing(false)} className="button muted-button">
+        Cancel
+      </button>
     </form>
   )
   }
