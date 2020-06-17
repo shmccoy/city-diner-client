@@ -1,0 +1,21 @@
+form {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 80%;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  margin-top: 20px;
+}
+
+form h2 {
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  form {
+    width: 35%;
+    padding-bottom: 12px;
+  }
+}

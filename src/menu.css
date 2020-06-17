@@ -1,0 +1,19 @@
+.menu-img {
+  height: auto;
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 700px) {
+  .menu-img {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .menu-img {
+    width: 35%;
+  }
+}

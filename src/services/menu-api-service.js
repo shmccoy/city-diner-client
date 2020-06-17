@@ -4,7 +4,7 @@ const MenuApiService = {
   getMenus() {
     return fetch(`${config.API_ENDPOINT}/menu`, {
       headers: {
-        
+                
       },
     })
       .then(res =>

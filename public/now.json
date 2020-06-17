@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "shmccoy-city-diner-client",
+    "name": "city-diner-client",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+      ]
+  }
