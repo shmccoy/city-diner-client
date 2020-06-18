@@ -8,6 +8,7 @@ import Menu from "./menu";
 import About from "./about";
 import Admin from "./admin";
 import Dashboard from "./dashboard";
+import PrivateRoute from "./Utilities/PrivateRoute";
 import "./App.css";
 
 export default class App extends Component {
@@ -28,7 +29,7 @@ export default class App extends Component {
               <Route path="/menu" component={Menu} />
               <Route path="/about" component={About} />
               <Route path="/admin" component={Admin} />
-              <Route path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
             </main>
           </Switch>
           <footer>

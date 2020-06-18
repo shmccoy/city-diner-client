@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 
-
-const ItemTable = props => (
+const ItemTable = (props) => (
   <table>
     <thead>
       <tr>
@@ -14,17 +13,27 @@ const ItemTable = props => (
     </thead>
     <tbody>
       {props.item.length > 0 ? (
-        props.item.map(item => (
+        props.item.map((item) => (
           <tr key={item.id}>
             <td>{item.name}</td>
             <td>{item.description}</td>
             <td>{item.price}</td>
             <td>{item.category}</td>
             <td>
-              <button onClick={(e) => {
-                  props.editRow(item)
-                }} className="button muted-button">Edit</button>
-              <button onClick={(e) => props.deleteItem(item.id)} className="button muted-button">Delete</button>
+              <button
+                onClick={(e) => {
+                  props.editRow(item);
+                }}
+                className="button muted-button"
+              >
+                Edit
+              </button>
+              <button
+                onClick={(e) => props.deleteItem(item.id)}
+                className="button muted-button"
+              >
+                Delete
+              </button>
             </td>
           </tr>
         ))
@@ -35,6 +44,6 @@ const ItemTable = props => (
       )}
     </tbody>
   </table>
-)
+);
 
-export default ItemTable
+export default ItemTable;

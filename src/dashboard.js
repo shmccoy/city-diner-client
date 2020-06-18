@@ -2,7 +2,6 @@ import React, { useState, Fragment } from "react";
 import ItemTable from "./itemtable";
 import AddItemForm from "./addItemForm";
 import EditItemForm from "./editItemForm";
-import Content from "./content";
 
 const Dashboard = () => {
   const itemData = [
