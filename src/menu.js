@@ -20,18 +20,18 @@ export default class Menu extends Component {
 
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/breakfast`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/omelettes`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/breakfast_combos`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/benedicts`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/pancakes`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/a_la_carte`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/soup_and_salads`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/cold_sandwich`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/hot_sandwich`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/burger_and_hot_dogs`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/entrees`),
-      fetch(`${config.API_ENDPOINT}/api/menu/menu/beverages`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Breakfast`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Omelettes`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Breakfast_Combos`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Benedicts`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Pancakes`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/A_la_Carte`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Soup_and_Salads`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Cold_Sandwich`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Hot_Sandwich`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Burger_and_Hot_Dogs`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Entrees`),
+      fetch(`${config.API_ENDPOINT}/api/menu/menu/Beverages`),
     ])
       .then((responses) => Promise.all(responses.map((res) => res.json())))
       .then(
