@@ -29,7 +29,7 @@ export default class App extends Component {
               <Route path="/menu" component={Menu} />
               <Route path="/about" component={About} />
               <Route path="/admin" component={Admin} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <Route path="/dashboard" component={Dashboard} />
             </main>
           </Switch>
           <footer>

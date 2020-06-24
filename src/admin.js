@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 import TokenService from "./services/token-service";
 import AuthApiService from "./services/auth-api-service";
@@ -24,14 +24,16 @@ export default class Admin extends Component {
   handleSubmitJwtAuth = (ev) => {
     ev.preventDefault();
     this.setState({ error: null });
-    const user_name = ev.target.elements[0].value;
-    const password = ev.target.elements[1].value;
+    const { user_name, password } = ev.target;
 
     AuthApiService.postLogin({
-      user_name: user_name,
-      password: password,
+      user_name: user_name.value,
+      password: password.value,
     })
       .then((res) => {
+        user_name.value = "";
+        password.value = "";
+
         TokenService.saveAuthToken(res.authToken);
         this.handleLoginSuccess();
       })
@@ -44,7 +46,7 @@ export default class Admin extends Component {
     const { error } = this.state;
     return (
       <div>
-        <form onLoginSuccess={this.handleLoginSuccess} className="login">
+        <form onSubmit={this.handleSubmitJwtAuth} className="login">
           <h2>Admin Login</h2>
 
           <div role="alert">{error && <p className="red">{error}</p>}</div>
@@ -67,10 +69,7 @@ export default class Admin extends Component {
             />
           </div>
 
-          <div
-            onClick={this.handleSubmitJwtAuth}
-            className="login__button__group"
-          >
+          <div className="login__button__group">
             <button type="submit" className="login__button">
               Submit
             </button>

@@ -1,35 +1,27 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
+import config from "./config";
 import ItemTable from "./itemtable";
 import AddItemForm from "./addItemForm";
 import EditItemForm from "./editItemForm";
 
-const Dashboard = () => {
-  const itemData = [
-    {
-      id: 1,
-      name: "2 Eggs with Bacon",
-      description: "Served with your choice of toast or biscuit.",
-      price: "5.50",
-      category: "Breakfast",
-    },
-    {
-      id: 2,
-      name: "2 Eggs with Link Sausage",
-      description: "Served with your choice of toast or biscuit.",
-      price: "5.95",
-      category: "Breakfast",
-    },
-    {
-      id: 3,
-      name: "Breakfast Club",
-      description:
-        "Fried egg, bacon, ham, American cheese, lettuce and tomato on your choice of toast with home fries or chips.",
-      price: "7.50",
-      category: "Breakfast",
-    },
-  ];
+export default class Dashboard extends Component {
+  state = { data: [],};
 
-  const [items, setItems] = useState(itemData);
+  useEffect(() => {
+    fetch(`${config.API_ENDPOINT}/api/menu/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ data: data });
+      });
+  }, []);
+  
+
+  const [items, setItems] = useState(data);
   const [currentItem, setCurrentItem] = useState({
     id: null,
     name: "",
@@ -101,4 +93,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+
