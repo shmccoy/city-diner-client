@@ -4,9 +4,7 @@ import ItemTable from "./itemtable";
 import AddItemForm from "./addItemForm";
 import EditItemForm from "./editItemForm";
 
-export default class Dashboard extends Component {
-  state = { data: [],};
-
+const Dashboard = () => {
   useEffect(() => {
     fetch(`${config.API_ENDPOINT}/api/menu/`, {
       method: "GET",
@@ -19,9 +17,8 @@ export default class Dashboard extends Component {
         this.setState({ data: data });
       });
   }, []);
-  
 
-  const [items, setItems] = useState(data);
+  const [items, setItems] = useState(useEffect());
   const [currentItem, setCurrentItem] = useState({
     id: null,
     name: "",
@@ -93,4 +90,4 @@ export default class Dashboard extends Component {
   );
 };
 
-
+export default Dashboard;
