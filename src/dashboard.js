@@ -5,7 +5,7 @@ import AddItemForm from "./addItemForm";
 import EditItemForm from "./editItemForm";
 
 const Dashboard = () => {
-  const [items, setItems] = useState();
+  const [items, setItems] = useState([]);
   const [editing, setEditing] = useState(false);
   useEffect(() => {
     fetch(`${config.API_ENDPOINT}/api/menu`, {
