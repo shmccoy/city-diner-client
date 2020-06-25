@@ -26,7 +26,7 @@ export default class Nav extends Component {
     let nav_bar_class = `nav-bar ${this.state.menu_class}`;
     return (
       <div className={nav_bar_class}>
-        <Link className="logo" to="/">
+        <Link className="logo" to="/home">
           <img
             className="logo-pic"
             src="https://scontent.fric1-2.fna.fbcdn.net/v/t1.0-9/408596_358424574252615_1917522085_n.jpg?_nc_cat=111&_nc_sid=174925&_nc_ohc=OrmLqrCVyPkAX-W3rrv&_nc_ht=scontent.fric1-2.fna&oh=fbef65801764b4076b5d12ac800d28f5&oe=5F0D34BD"

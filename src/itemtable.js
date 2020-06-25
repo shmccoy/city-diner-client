@@ -12,7 +12,6 @@ const ItemTable = (props) => (
       </tr>
     </thead>
     <tbody>
-      {console.log(props)}
       {props.item.length > 0 ? (
         props.item.map((item) => (
           <tr key={item.id}>
@@ -43,7 +42,6 @@ const ItemTable = (props) => (
           <td colSpan={3}>No items</td>
         </tr>
       )}
-      console.log(this.props);
     </tbody>
   </table>
 );

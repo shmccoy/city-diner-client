@@ -3,11 +3,18 @@
   font-family: "Nunito Sans", sans-serif;
   padding: 5px 0 0;
   max-height: 10vh;
+
   overflow: hidden;
+  clear: both;
+
+  position: relative;
+
+  width: 100%;
 }
 
 .logo-pic {
-  width: 25%;
+  width: 15%;
+  height: auto;
 }
 a {
   color: black;
@@ -72,18 +79,60 @@ a:hover {
     margin: 0;
   }
   .nav-bar {
-    max-height: 9vh;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .nav-bar {
     max-height: 10vh;
   }
 }
-
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 260px) {
   .nav-bar {
-    max-height: 6vh;
+    max-height: 5vh;
+  }
+}
+
+@media screen and (min-width: 260px) {
+  .nav-bar {
+    max-height: 7vh;
+  }
+}
+@media screen and (min-width: 420px) {
+  .nav-bar {
+    max-height: 9vh;
+  }
+}
+@media screen and (min-width: 500px) {
+  .logo-pic {
+    width: 15%;
+  }
+}
+@media screen and (min-width: 630px) {
+  .logo-pic {
+    width: 15%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .logo-pic {
+    width: 10%;
+  }
+  .nav-bar {
+    max-height: 12vh;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .nav-bar {
+    max-height: 12vh;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .nav-bar {
+    max-height: 15vh;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .logo-pic {
+    width: 10%;
+  }
+}
+@media screen and (min-width: 1450px) {
+  .nav-bar {
+    max-height: 20vh;
   }
 }

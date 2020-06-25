@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import "./home.css";
 
 export default class Home extends Component {
   render() {
     return (
       <div className="home">
-        <h2>Welcome to City Diner!</h2>
+        <h1>Welcome</h1>
+        <h1>to</h1>
+        <h1>City Diner!</h1>
 
         <div className="diner-pics">
           <img
@@ -43,6 +46,11 @@ export default class Home extends Component {
           <img
             src="https://scontent.fric1-2.fna.fbcdn.net/v/t31.0-8/471058_358421547586251_1765450742_o.jpg?_nc_cat=111&_nc_sid=d2e176&_nc_ohc=fEvtAJL8gSMAX83bhN7&_nc_ht=scontent.fric1-2.fna&oh=cf09e6691d56c5e311e064c82cb45dce&oe=5F0BFA0F"
             alt="Inside of diner"
+            loading="lazy"
+          />
+          <img
+            src="https://scontent.fric1-2.fna.fbcdn.net/v/t1.0-9/1417_501733203255084_896552882_n.jpg?_nc_cat=105&_nc_sid=9267fe&_nc_ohc=L4jJEtsS1MgAX-E-Kvh&_nc_ht=scontent.fric1-2.fna&oh=2a6b6113ad305ab124498c1346598c30&oe=5F192D0C"
+            alt="Painting of the side of diner building"
             loading="lazy"
           />
         </div>

@@ -6,6 +6,11 @@
   margin-right: auto;
 }
 
+.Menu p {
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+}
+
 @media screen and (min-width: 700px) {
   .menu-img {
     width: 50%;

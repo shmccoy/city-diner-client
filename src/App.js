@@ -8,6 +8,7 @@ import Menu from "./menu";
 import About from "./about";
 import Admin from "./admin";
 import Dashboard from "./dashboard";
+import LandingPage from "./landingpage";
 import PrivateRoute from "./Utilities/PrivateRoute";
 import "./App.css";
 
@@ -25,11 +26,12 @@ export default class App extends Component {
           </nav>
           <Switch>
             <main className="main">
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/home" component={Home} />
               <Route path="/menu" component={Menu} />
               <Route path="/about" component={About} />
               <Route path="/admin" component={Admin} />
-              <Route path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
             </main>
           </Switch>
           <footer>

@@ -3,6 +3,7 @@ import config from "./config";
 import ItemTable from "./itemtable";
 import AddItemForm from "./addItemForm";
 import EditItemForm from "./editItemForm";
+import "./dashboard.css";
 
 const Dashboard = () => {
   const [items, setItems] = useState([]);
@@ -17,12 +18,9 @@ const Dashboard = () => {
       .then((response) => response.json())
       .then((res) => {
         setItems(res);
-        setTimeout(() => {}, 20000);
-        // console.log(items);
       });
   }, [editing]);
 
-  //const [items, setItems] = useState(useEffect());
   const [currentItem, setCurrentItem] = useState({
     id: null,
     name: "",
@@ -59,7 +57,7 @@ const Dashboard = () => {
       category: item.category,
     });
   };
-  console.log("items=", items);
+
   return (
     <div>
       <h1>Menu Editor</h1>
@@ -83,7 +81,7 @@ const Dashboard = () => {
               </Fragment>
             )}
           </div>
-          <div className="flex-large">
+          <div id="list" className="flex-large">
             <h2>View items</h2>
             <ItemTable item={items} editRow={editRow} deleteItem={deleteItem} />
           </div>

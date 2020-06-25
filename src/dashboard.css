@@ -1,0 +1,17 @@
+h1,
+h2,
+h3,
+td {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+th {
+  font-family: "Roberto", sans-serif;
+}
+
+label {
+  font-family: "Nunito Sans", sans-serif;
+}
