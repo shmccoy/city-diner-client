@@ -22,9 +22,9 @@
 
 ### Screen Shots:
 
-![Menu](<img src="public\img\screenshot2.png?raw=true /> "Title")
+![Menu](<img src="public\img\screenshot2.png?raw=true" /> "Title")
 
-![Home page](<img src="public\img\screenshot.png?raw=true /> "Title")
+![Home page](<img src="public\img\screenshot.png?raw=true" /> "Title")
 
 ---
 
