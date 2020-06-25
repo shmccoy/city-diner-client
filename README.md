@@ -3,7 +3,7 @@
 ---
 
 <p align="center">
-  <img src="https://imgur.com/8aZP7Eu">
+  <img src="public\img\8aZP7Eu.jpg?raw=true">
 </p>
 
 ---
@@ -22,9 +22,9 @@
 
 ### Screen Shots:
 
-![Menu](https://imgur.com/jnwOvOc "Title")
+![Menu](public\img\screenshot2.png?raw=true "Title")
 
-![Home page](https://imgur.com/kgdy78Z "Title")
+![Home page](public\img\screenshot.png?raw=true "Title")
 
 ---
 
