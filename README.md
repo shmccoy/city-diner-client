@@ -22,11 +22,9 @@
 
 ### Screen Shots:
 
-![Menu](<img src="public\img\screenshot2.png?raw=true" /> "Title")
+<img src="public\img\screenshot2.png" alt="menu"/>
 
-![Home page](<img src="public\img\screenshot.png?raw=true" /> "Title")
-
----
+<img src="public\img\screenshot.png" alt="Home Page"/>
 
 ### Description
 
