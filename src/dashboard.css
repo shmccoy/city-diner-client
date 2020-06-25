@@ -15,3 +15,7 @@ th {
 label {
   font-family: "Nunito Sans", sans-serif;
 }
+td {
+  border: 2px solid black;
+  border-radius: 5px;
+}
