@@ -79,17 +79,18 @@ export default class AddItemForm extends Component {
           value={this.state.category}
           onChange={(e) => this.handleCategoryChange(e)}
         >
-          <option value="breakfast">Breakfast</option>
-          <option value="omelets">Omelets</option>
-          <option value="benedicts">Benedicts</option>
-          <option value="pancakes">Pancakes, French Toast and Waffles</option>
-          <option value="a la carte">Breakfast A La Carte</option>
-          <option value="soups and salads">Soups and Salads</option>
-          <option value="cold sandwiches">Cold Sandwiches</option>
-          <option value="hot sadwiches">Hot Sandwiches</option>
-          <option value="burger and hot dogs">Burgers and Hot Dogs</option>
-          <option value="entrees">Entrees</option>
-          <option value="beverages">Beverages</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Omelettes">Omelettes</option>
+          <option value="Benedicts">Benedicts</option>
+          <option value="Pancakes">Pancakes, French Toast and Waffles</option>
+          <option value="Breakfast_Combos">Breakfast Combos</option>
+          <option value="A_la_Carte">Breakfast A La Carte</option>
+          <option value="Soups_and_Salads">Soups and Salads</option>
+          <option value="Cold_Sandwiches">Cold Sandwiches</option>
+          <option value="Hot_Sadwiches">Hot Sandwiches</option>
+          <option value="Burger_and_Hot_Dogs">Burgers and Hot Dogs</option>
+          <option value="Entrees">Entrees</option>
+          <option value="Beverages">Beverages</option>
         </select>
         <br />
         <input type="submit" />
