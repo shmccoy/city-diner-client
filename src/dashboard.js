@@ -5,20 +5,24 @@ import AddItemForm from "./addItemForm";
 import EditItemForm from "./editItemForm";
 
 const Dashboard = () => {
+  const [items, setItems] = useState();
+  const [editing, setEditing] = useState(false);
   useEffect(() => {
-    fetch(`${config.API_ENDPOINT}/api/menu/`, {
+    fetch(`${config.API_ENDPOINT}/api/menu`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((response) => response.json())
-      .then((data) => {
-        this.setState({ data: data });
+      .then((res) => {
+        setItems(res);
+        setTimeout(() => {}, 20000);
+        // console.log(items);
       });
-  }, []);
+  }, [editing]);
 
-  const [items, setItems] = useState(useEffect());
+  //const [items, setItems] = useState(useEffect());
   const [currentItem, setCurrentItem] = useState({
     id: null,
     name: "",
@@ -26,7 +30,6 @@ const Dashboard = () => {
     price: "",
     category: "",
   });
-  const [editing, setEditing] = useState(false);
 
   const addItem = (item) => {
     item.id = items.length + 1;
@@ -56,7 +59,7 @@ const Dashboard = () => {
       category: item.category,
     });
   };
-
+  console.log("items=", items);
   return (
     <div>
       <h1>Menu Editor</h1>
