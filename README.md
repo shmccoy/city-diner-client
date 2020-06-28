@@ -48,7 +48,7 @@ Run `npm t` to test the app.
 
 ---
 
-### Some of our Components...
+### Some of the Components...
 
 | Component    | Description                                                                                          |
 | ------------ | ---------------------------------------------------------------------------------------------------- |
