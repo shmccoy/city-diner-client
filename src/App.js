@@ -21,6 +21,7 @@ export default class App extends Component {
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;900&family=Roboto&display=swap"
             rel="stylesheet"
           />
+
           <nav>
             <Nav />
           </nav>

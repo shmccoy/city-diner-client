@@ -85,7 +85,7 @@ export default class EditItemForm extends Component {
           <option value="beverages">Beverages</option>
         </select>
         <br />
-        <button>Update user</button>
+        <button>Update Item</button>
         <button
           onClick={() => this.props.setEditing(false)}
           className="button muted-button"

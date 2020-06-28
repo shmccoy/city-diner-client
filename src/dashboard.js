@@ -42,8 +42,13 @@ const Dashboard = () => {
 
   const updateItem = (id, updateditem) => {
     setEditing(false);
+    const updatedItemIndex = items.findIndex((item) => item.id === id);
 
-    setItems(items.map((item) => (item.id === id ? updateditem : item)));
+    setItems((prev) => {
+      const newItems = prev;
+      newItems[updatedItemIndex] = updateditem;
+      return newItems;
+    });
   };
 
   const editRow = (item) => {

@@ -1,25 +1,27 @@
 import React from "react";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const ItemTable = (props) => (
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Category</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
+  <Table>
+    <Thead>
+      <Tr>
+        <Th>Name</Th>
+        <Th>Description</Th>
+        <Th>Price</Th>
+        <Th>Category</Th>
+        <Th>Actions</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
       {props.item.length > 0 ? (
         props.item.map((item) => (
-          <tr key={item.id}>
-            <td>{item.name}</td>
-            <td>{item.description}</td>
-            <td>{item.price}</td>
-            <td>{item.category}</td>
-            <td>
+          <Tr key={item.id}>
+            <Td>{item.name}</Td>
+            <Td>{item.description}</Td>
+            <Td>{item.price}</Td>
+            <Td>{item.category}</Td>
+            <Td>
               <button
                 onClick={(e) => {
                   props.editRow(item);
@@ -34,16 +36,16 @@ const ItemTable = (props) => (
               >
                 Delete
               </button>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
         ))
       ) : (
-        <tr>
-          <td colSpan={3}>No items</td>
-        </tr>
+        <Tr>
+          <Td colSpan={3}>No items</Td>
+        </Tr>
       )}
-    </tbody>
-  </table>
+    </Tbody>
+  </Table>
 );
 
 export default ItemTable;
