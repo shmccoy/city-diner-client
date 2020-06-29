@@ -45,9 +45,16 @@ const Dashboard = () => {
     const updatedItemIndex = items.findIndex((item) => item.id === id);
 
     setItems((prev) => {
-      const newItems = prev;
-      newItems[updatedItemIndex] = updateditem;
-      return newItems;
+      return [...prev].map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            ...updateditem,
+          };
+        }
+
+        return item;
+      });
     });
   };
 

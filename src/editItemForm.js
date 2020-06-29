@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../config";
 
 export default class EditItemForm extends Component {
   constructor(props) {
@@ -29,7 +30,45 @@ export default class EditItemForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.updateItem(this.state);
+    this.props.updateItem(this.state.id, this.state);
+    fetch(`${config.API_ENDPOINT}/api/menu`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then(
+        ([
+          Breakfast,
+          Omelettes,
+          Breakfast_Combos,
+          Benedicts,
+          Pancakes,
+          A_la_Carte,
+          Soup_and_Salads,
+          Cold_Sandwich,
+          Hot_Sandwich,
+          Burger_and_Hot_Dogs,
+          Entrees,
+          Beverages,
+        ]) => {
+          this.setState({
+            Breakfast: Breakfast,
+            Omelettes: Omelettes,
+            Breakfast_Combos: Breakfast_Combos,
+            Benedicts: Benedicts,
+            Pancakes: Pancakes,
+            A_la_carte: A_la_Carte,
+            Soup_and_Salads: Soup_and_Salads,
+            Cold_Sandwich: Cold_Sandwich,
+            Hot_Sandwich: Hot_Sandwich,
+            Burger_and_Hot_Dogs: Burger_and_Hot_Dogs,
+            Entrees: Entrees,
+            Beverages: Beverages,
+          });
+        }
+      );
   }
 
   render() {
