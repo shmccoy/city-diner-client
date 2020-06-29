@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./addItemForm.css";
+import config from "./config";
 
 export default class AddItemForm extends Component {
   constructor(props) {
@@ -38,6 +39,15 @@ export default class AddItemForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.addItem(this.state);
+    return fetch(`${config.API_ENDPOINT}/api/menu`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   }
 
   render() {

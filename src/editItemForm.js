@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import config from "./config";
+import config from "./config";
 
 export default class EditItemForm extends Component {
   constructor(props) {
@@ -31,6 +31,15 @@ export default class EditItemForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.updateItem(this.state.id, this.state);
+    return fetch(`${config.API_ENDPOINT}/api/menu/${this.state.id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : ""
+    );
   }
 
   render() {
