@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 import TokenService from "./services/token-service";
 import AuthApiService from "./services/auth-api-service";

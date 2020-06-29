@@ -38,6 +38,15 @@ const Dashboard = () => {
     setEditing(false);
 
     setItems(items.filter((item) => item.id !== id));
+    return fetch(`${config.API_ENDPOINT}/api/menu/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(items),
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : ""
+    );
   };
 
   const updateItem = (id, updateditem) => {
