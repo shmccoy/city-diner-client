@@ -4,7 +4,7 @@ import React, { Component } from "react";
 export default class EditItemForm extends Component {
   constructor(props) {
     super(props);
-    this.state = props.currentItem;
+    this.state = props.currentItem || {};
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
